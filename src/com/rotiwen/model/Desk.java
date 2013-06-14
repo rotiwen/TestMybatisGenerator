@@ -94,4 +94,13 @@ public class Desk {
 	public void setArea(Area area) {
 		this.area = area;
 	}
+	
+	
+	@Override
+	public String toString() {
+		return "id=" + getId() + ";\n" +
+			"code=" + getCode() + ";\n" +
+			"name=" + getName() + ";\n" +
+			"area:\n" + getArea().toString() + ";\n";
+	}
 }

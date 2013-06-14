@@ -1,6 +1,9 @@
 package com.rotiwen.model;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 public class Area {
 
@@ -30,6 +33,17 @@ public class Area {
 	 * @return  the value of area.id
 	 * @mbggenerated  Fri Jun 14 13:20:33 CST 2013
 	 */
+	
+	private List<Desk> desks;
+	
+	public List<Desk> getDesks() {
+		return desks;
+	}
+
+	public void setDesks(List<Desk> desks) {
+		this.desks = desks;
+	}
+
 	public String getId() {
 		return id;
 	}
@@ -95,5 +109,14 @@ public class Area {
 	 */
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
+	}
+	
+	@Override
+	public String toString() {
+		DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		return "id=" + getId() + ";\n" +
+			"code=" + getCode() + ";\n" +
+			"name=" + getName() + ";\n" +
+			"createTime=" + format.format(getCreateTime()) + ";\n";
 	}
 }
